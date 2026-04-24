@@ -199,6 +199,7 @@ def _check_ccxt() -> CheckResult:
 
 def _check_massive() -> CheckResult:
     """Check Massive.com API key configuration and package availability."""
+    # POLYGON_API_KEY is the legacy alias accepted by the massive loader
     api_key = os.getenv("MASSIVE_API_KEY", "").strip() or os.getenv("POLYGON_API_KEY", "").strip()
     if not api_key:
         return CheckResult(
