@@ -140,7 +140,7 @@ class DataLoader:
                         "high":   float(a.high),
                         "low":    float(a.low),
                         "close":  float(a.close),
-                        "volume": float(a.volume) if a.volume is not None else 0.0,
+                        "volume": float(a.volume) if a.volume is not None else None,
                     }
                     for a in aggs
                 ]
