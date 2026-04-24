@@ -197,6 +197,30 @@ def _check_ccxt() -> CheckResult:
     return CheckResult(name="ccxt", status="ready", message="installed", impact="")
 
 
+def _check_massive() -> CheckResult:
+    """Check Massive.com API key configuration and package availability."""
+    api_key = os.getenv("MASSIVE_API_KEY", "").strip() or os.getenv("POLYGON_API_KEY", "").strip()
+    if not api_key:
+        return CheckResult(
+            name="massive",
+            status="not_configured",
+            message="MASSIVE_API_KEY not set (optional)",
+            impact="US stocks & options data unavailable",
+        )
+
+    try:
+        import massive  # noqa: F401
+    except ImportError:
+        return CheckResult(
+            name="massive",
+            status="skipped",
+            message="package not installed (pip install massive>=2.0.0)",
+            impact="US stocks & options data unavailable",
+        )
+
+    return CheckResult(name="massive", status="ready", message="API key configured", impact="")
+
+
 # -- Status icons and colors --------------------------------------------------
 
 _STATUS_DISPLAY = {
@@ -226,6 +250,7 @@ def run_preflight(console: Optional[Console] = None) -> List[CheckResult]:
         _check_tushare,
         _check_akshare,
         _check_ccxt,
+        _check_massive,
     ]
 
     results: List[CheckResult] = []
