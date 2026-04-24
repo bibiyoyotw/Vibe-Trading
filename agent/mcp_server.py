@@ -114,6 +114,7 @@ def backtest(run_dir: str) -> str:
     - code/signal_engine.py: strategy signal generation code
 
     Supported data sources (set in config.json "source" field):
+    - "massive": US stocks & options — institutional-grade data (requires MASSIVE_API_KEY)
     - "yfinance": HK/US equities (free, no API key needed)
     - "okx": cryptocurrency (free, no API key needed)
     - "tushare": China A-shares (requires TUSHARE_TOKEN env var)

@@ -83,8 +83,8 @@ class TestDetectSource:
         "code, expected_source",
         [
             ("000001.SZ", "tushare"),
-            ("AAPL.US", "yfinance"),
-            ("0700.HK", "yfinance"),
+            ("AAPL.US", "massive"),
+            ("0700.HK", "massive"),
             ("BTC-USDT", "okx"),
             ("IF2406.CFFEX", "tushare"),
             ("EUR/USD", "akshare"),
@@ -121,7 +121,7 @@ class TestGroupCodes:
         codes = ["000001.SZ", "AAPL.US"]
         groups = _group_codes_by_source(codes)
         assert "tushare" in groups
-        assert "yfinance" in groups
+        assert "massive" in groups
 
 
 # ---------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 ---
 name: vibe-trading
 version: 0.1.5
-description: Professional finance research toolkit — backtesting (7 engines), factor analysis, options pricing, 71 finance skills, 29 multi-agent swarm teams, Trade Journal analyzer, and Shadow Account (extract → backtest → render) across 5 data sources (tushare, yfinance, okx, akshare, ccxt).
+description: Professional finance research toolkit — backtesting (7 engines), factor analysis, options pricing, 71 finance skills, 29 multi-agent swarm teams, Trade Journal analyzer, and Shadow Account (extract → backtest → render) across 6 data sources (massive, tushare, yfinance, okx, akshare, ccxt).
 dependencies:
   python: ">=3.11"
   pip:
@@ -121,7 +121,7 @@ Use `load_skill(name)` to access full methodology docs with code templates.
 | `factor_analysis` | IC/IR analysis + layered backtest | None* |
 | `analyze_options` | Black-Scholes price + Greeks | None |
 | `pattern_recognition` | Detect chart patterns (H&S, double top, etc.) | None |
-| `get_market_data` | Fetch OHLCV data across 5 sources (auto-detect + fallback) | None* |
+| `get_market_data` | Fetch OHLCV data across 6 sources (auto-detect + fallback) | None* |
 | `web_search` | Search the web via DuckDuckGo | None |
 | `read_url` | Fetch web page as Markdown | None |
 | `read_document` | Extract text from PDF/DOCX/XLSX/PPTX/images | None |
